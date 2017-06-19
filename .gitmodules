@@ -1,0 +1,15 @@
+[submodule "papercolor-theme"]
+	path = papercolor-theme
+	url = https://github.com/NLKNguyen/papercolor-theme
+[submodule "limelight.vim"]
+	path = limelight.vim
+	url = https://github.com/junegunn/limelight.vim
+[submodule "goyo.vim"]
+	path = goyo.vim
+	url = https://github.com/junegunn/goyo.vim
+[submodule "vim-pandoc-syntax"]
+	path = vim-pandoc-syntax
+	url = https://github.com/vim-pandoc/vim-pandoc-syntax
+[submodule "vim-pandoc"]
+	path = vim-pandoc
+	url = https://github.com/vim-pandoc/vim-pandoc
