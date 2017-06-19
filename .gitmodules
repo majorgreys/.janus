@@ -13,3 +13,9 @@
 [submodule "vim-pandoc"]
 	path = vim-pandoc
 	url = https://github.com/vim-pandoc/vim-pandoc
+[submodule "vim-airline"]
+	path = vim-airline
+	url = https://github.com/vim-airline/vim-airline
+[submodule "vim-airline-themes"]
+	path = vim-airline-themes
+	url = https://github.com/vim-airline/vim-airline-themes
