@@ -6,11 +6,16 @@ if has("gui_macvim")
 endif
 
 " Sets default colorscheme
-set t_Co=256
-set background=dark
+set t_Co=256 set background=dark
 colorscheme PaperColor
 
-set guifont=Hack:h16
+if has("gui_running")
+  if has("gui_gtk2") || has("gui_gtk3")
+    set guifont=Hack\ 16
+  else
+    set guifont=Hack:h16
+  endif
+endif
 
 " Removes trailing spaces
 function TrimWhiteSpace()
@@ -39,14 +44,6 @@ function! s:goyo_enter()
 endfunction
 
 function! s:goyo_leave()
-	" Quit Vim if this is the only remaining buffer
-  if b:quitting && len(filter(range(1, bufnr('$')), 'buflisted(v:val)')) == 1
-    if b:quitting_bang
-      qa!
-    else
-      qa
-    endif
-  endif
   if has('gui_running')
     set nofullscreen
     set background=dark
