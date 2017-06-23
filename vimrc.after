@@ -6,8 +6,20 @@ if has("gui_macvim")
 endif
 
 " Sets default colorscheme
-set t_Co=256 set background=dark
-colorscheme PaperColor
+set t_Co=256
+set background=dark
+colorscheme pencil 
+
+set nocompatible
+filetype plugin on
+
+augroup pencil
+  autocmd!
+  autocmd FileType markdown,mkd call pencil#init()
+  autocmd FileType text         call pencil#init()
+augroup END
+
+autocmd BufNewFile,BufReadPost *.md set filetype=markdown
 
 if has("gui_running")
   if has("gui_gtk2") || has("gui_gtk3")
@@ -26,6 +38,8 @@ function TrimWhiteSpace()
 " Stop folding
 set nofoldenable
 
+let g:pencil#wrapModeDefault = 'soft'
+
 " Goyo
 function! s:goyo_enter()
   if has('gui_running')
@@ -36,6 +50,7 @@ function! s:goyo_enter()
     silent !tmux set status off
   	silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   endif
+  colorscheme pencil
   set noshowmode
   set noshowcmd
   set scrolloff=999
@@ -58,6 +73,9 @@ function! s:goyo_leave()
   Limelight!
   " ...
 endfunction
+
+let g:goyo_margin_top=2
+let g:goyo_margin_bottom=2
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()

@@ -7,12 +7,6 @@
 [submodule "goyo.vim"]
 	path = goyo.vim
 	url = https://github.com/junegunn/goyo.vim
-[submodule "vim-pandoc-syntax"]
-	path = vim-pandoc-syntax
-	url = https://github.com/vim-pandoc/vim-pandoc-syntax
-[submodule "vim-pandoc"]
-	path = vim-pandoc
-	url = https://github.com/vim-pandoc/vim-pandoc
 [submodule "vim-airline"]
 	path = vim-airline
 	url = https://github.com/vim-airline/vim-airline
@@ -22,3 +16,12 @@
 [submodule "vim-pencil"]
 	path = vim-pencil
 	url = https://github.com/reedes/vim-pencil
+[submodule "vim-colors-pencil"]
+	path = vim-colors-pencil
+	url = https://github.com/reedes/vim-colors-pencil
+[submodule "vim-markdown"]
+	path = vim-markdown
+	url = https://github.com/tpope/vim-markdown
+[submodule "vim-markdown-enhancements"]
+	path = vim-markdown-enhancements
+	url = http://github.com/mattly/vim-markdown-enhancements
