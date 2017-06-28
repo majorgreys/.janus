@@ -25,3 +25,6 @@
 [submodule "vim-markdown-enhancements"]
 	path = vim-markdown-enhancements
 	url = http://github.com/mattly/vim-markdown-enhancements
+[submodule "vim-material-theme"]
+	path = vim-material-theme
+	url = https://github.com/jdkanani/vim-material-theme
