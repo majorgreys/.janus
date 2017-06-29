@@ -8,7 +8,7 @@ endif
 " Sets default colorscheme
 set t_Co=256
 set background=dark
-colorscheme pencil
+colorscheme material-theme
 let g:pencil#conceallevel = 0
 
 set nocompatible
