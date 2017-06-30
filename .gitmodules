@@ -28,3 +28,6 @@
 [submodule "vim-material-theme"]
 	path = vim-material-theme
 	url = https://github.com/jdkanani/vim-material-theme
+[submodule "vim-fullscreen"]
+	path = vim-fullscreen
+	url = https://github.com/lambdalisue/vim-fullscreen
