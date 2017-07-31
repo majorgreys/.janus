@@ -31,3 +31,9 @@
 [submodule "vim-fullscreen"]
 	path = vim-fullscreen
 	url = https://github.com/lambdalisue/vim-fullscreen
+[submodule "vim-lexical"]
+	path = vim-lexical
+	url = git@github.com:reedes/vim-lexical.git
+[submodule "vim-litecorrect"]
+	path = vim-litecorrect
+	url = git@github.com:reedes/vim-litecorrect.git
