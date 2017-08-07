@@ -1,27 +1,31 @@
-" Customizations
-if has("gui_macvim")
-  " Get rid of toolbar buttons
-  set go=egmrLi
-  let macvim_hig_shift_movement=1
-endif
 
 " Sets default colorscheme
 set t_Co=256
 set background=dark
 colorscheme material-theme
-let g:pencil#conceallevel = 0
 
 set nocompatible
 filetype plugin on
 
+
+" Pencil
+let g:pencil#conceallevel = 0
 augroup pencil
   autocmd!
   autocmd FileType markdown,mkd call pencil#init()
+                            \ | call litecorrect#init()
+                            \ | setl spell spl=en_us fdl=4 noru nonu nornu
+                            \ | setl spellfile=$HOME/.janus/en.utf-8.add
+                            \ | setl fdo+=search
   autocmd FileType text         call pencil#init()
 augroup END
 
-autocmd BufNewFile,BufReadPost *.md set filetype=markdown
-
+" GUI Customizations
+if has("gui_macvim")
+  " Get rid of toolbar buttons
+  set go=egmrLi
+  let macvim_hig_shift_movement=1
+endif
 if has("gui_running")
   if has("gui_gtk2") || has("gui_gtk3")
     set guifont=Hack\ 16
@@ -39,44 +43,32 @@ function TrimWhiteSpace()
 " Stop folding
 set nofoldenable
 
-let g:pencil#wrapModeDefault = 'soft'
-
 " Goyo
 function! s:goyo_enter()
   if has('gui_running')
     set fullscreen
-    set background=light
     set linespace=7
-  " elseif exists('$TMUX')
-  "   silent !tmux set status off
-  " 	silent !tmux list-panes -F '\#F' | grep -q Z || tmux resize-pane -Z
   endif
   colorscheme pencil
   set noshowmode
   set noshowcmd
   set scrolloff=999
   Limelight
-  " ...
 endfunction
 
 function! s:goyo_leave()
   if has('gui_running')
     set nofullscreen
-    set background=dark
     set linespace=0
-  " elseif exists('$TMUX')
-	" 	silent !tmux set status on
-	" 	silent !tmux list-panes -F '\#F' | grep -q Z && tmux resize-pane -Z
   endif
   set showmode
   set showcmd
   set scrolloff=5
   Limelight!
-  " ...
 endfunction
 
-let g:goyo_margin_top=2
-let g:goyo_margin_bottom=2
+let g:goyo_margin_top=1
+let g:goyo_margin_bottom=1
 
 autocmd! User GoyoEnter nested call <SID>goyo_enter()
 autocmd! User GoyoLeave nested call <SID>goyo_leave()
