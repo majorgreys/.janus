@@ -33,7 +33,7 @@
 	url = https://github.com/lambdalisue/vim-fullscreen
 [submodule "vim-lexical"]
 	path = vim-lexical
-	url = git@github.com:reedes/vim-lexical.git
+	url = https://github.com/reedes/vim-lexical
 [submodule "vim-litecorrect"]
 	path = vim-litecorrect
-	url = git@github.com:reedes/vim-litecorrect.git
+	url = https://github.com/reedes/vim-litecorrect
